@@ -1,1 +1,34 @@
 /*-- Reset --*/
+body{
+	margin: 0;
+	padding: 50px;
+	background: #fff;
+
+}
+
+.align-center{
+	text-align: center;
+}
+.align-left{
+	text-align: left;
+}
+.align-righ{
+	text-align: right;
+}
+
+
+/*-- Main css --*/
+.hello-hackerYou{}
+
+/*- Modal css -*/
+.modal-hackerYou{
+	visibility: hidden;
+}
+.modal-hackerYou.show{
+	/*display: none;*/
+	visibility: visible;
+}
+
+.modal-hackerYou.hidden{
+	visibility: hidden;
+}
