@@ -5,21 +5,21 @@ $(function () {
 	let lNameDtls;
 	let emailDtls;
 	let phoneInputDtls;
+	let modalBackground = $('.modal-background');
 
 	//Prompt div to open
 	$('.hello-hackerYou__btn').on('click', function(){
 		console.log('fired open');
-		$('.modal-background').addClass('show');
+		modalBackground.addClass('show');
+		$('.modal-hackerYou__container').animate('slow');
 	});
-	
 
 	//Prompt div to close
 	$('.modal-hackerYou__close').on('click', function(){
 		console.log('fired closed');
-		$('.modal-background').removeClass('show');
+		modalBackground.removeClass('show');
 
 	});
-
 
 	//form validate
 	 $("#form").validate({
@@ -42,7 +42,6 @@ $(function () {
 			        $('.modal-hackerYou__container').hide('slow');
 			    }
        });
-
 
 	//form submit
 	$('#form').on('submit', function(e){
@@ -69,8 +68,5 @@ $(function () {
 
 	    return false;
 	});
-
-	
-
 
 });
