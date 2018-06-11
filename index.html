@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
-	<title>Project 2</title>
+	<title>Project 2 | RAPHAEL-BONNEY</title>
 
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 	<link rel="stylesheet" href="styles/styles.css">
@@ -13,35 +13,45 @@
 
 </head>
 <body>
-	<div class="hello-hackerYou">
+	<div class="hello-hackerYou align-center">
 		<h1 class="hello-hackerYou__title">Welcome to my second project</h1>
 		<button class="hello-hackerYou__btn">Please click for details</button>
 	</div>
 
 	<!-- onclick-popup -->
-	<div class="modal-hackerYou">
-		<h1 class="modal-hackerYou__title">Please give us your info so we can contact you</h1>
-		<form action="" class="modal-hackerYou__form">
-			<div class="modal-hackerYou__form--fName">
-				<input type="text" name="fName" id="" placeholder="First name">
+	<div class="modal-background">
+		<div class="modal-hackerYou">
+			<div class="modal-hackerYou__container align-center">
+				<h1 class="modal-hackerYou__title m-t-0">Please give us your info so we can contact you!!!</h1>
+				<form id="form" class="modal-hackerYou__form">
+					<div class="modal-hackerYou__form--fName">
+						<input type="text" name="fName" id="fName" placeholder="First name">
+					</div>
+					<div class="modal-hackerYou__form--lName">
+						<input type="text" name="lName" id="lName" placeholder="Last name">
+					</div>
+					<div class="modal-hackerYou__form--email">
+						<input type="text" name="email" id="email" placeholder="Email">
+					</div>
+					<div class="modal-hackerYou__form--phone">
+						<input type="number" name="phone" id="phone" placeholder="Phone number">
+					</div>
+					<div class="modal-hackerYou__form--submit">
+						<input type="submit" value="submit" id="btn-submit"> 
+					</div>
+				</form>
 			</div>
-			<div class="modal-hackerYou__form--lName">
-				<input type="text" name="lName" id="" placeholder="Last name">
+			<div class="modal-hackerYou__success">
+				
 			</div>
-			<div class="modal-hackerYou__form--email">
-				<input type="text" name="email" id="" placeholder="Email">
-			</div>
-			<div class="modal-hackerYou__form--phone">
-				<input type="number" name="phone" id="" placeholder="Phone number">
-			</div>
-			<div class="modal-hackerYou__form--submit">
-				<input type="submit" value="submit"> 
-			</div>
-		</form>
+			<button class="modal-hackerYou__close">X</button>
+
+		</div>
 	</div>
 	<!-- Testing -->
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.0/jquery.validate.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
