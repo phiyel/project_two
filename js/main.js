@@ -8,8 +8,9 @@ $(function () {
 	let modalBackground = $('.modal-background');
 
 	//Prompt div to open
-	$('.hello-hackerYou__btn').on('click', function(){
+	$('.hello-hackerYou__btn').on('click', function(e){
 		console.log('fired open');
+		e.preventDefault();
 		modalBackground.addClass('show');
 		$('.modal-hackerYou__container').animate('slow');
 	});
@@ -18,7 +19,6 @@ $(function () {
 	$('.modal-hackerYou__close').on('click', function(){
 		console.log('fired closed');
 		modalBackground.removeClass('show');
-
 	});
 
 	//form validate
@@ -41,19 +41,18 @@ $(function () {
                  submitHandler: function() {
 			        $('.modal-hackerYou__container').hide('slow');
 			    }
-       });
+			    
+       });	 
 
 	//form submit
-	$('#form').on('submit', function(e){
-		
+	$('#form').on('submit', function(e){		
 		e.preventDefault();
-		
+
 		//Get input value
 		fNameDtls = $('input[name=fName]').val();
 		lNameDtls = $('input[name=lName]').val();
 		emailDtls = $('input[name=email]').val();
 		phoneInputDtls = $('input[type=number]').val();
-
 
 		//Output results
 	    if($(this).valid()) {
@@ -69,4 +68,7 @@ $(function () {
 	    return false;
 	});
 
+	$('#form').data('validator').resetForm();
+
 });
+
