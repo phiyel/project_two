@@ -1,24 +1,21 @@
 //Jquery & JavaScripts
 $(function () {
-	//Variables
-	let fNameDtls;
-	let lNameDtls;
-	let emailDtls;
-	let phoneInputDtls;
-	let modalBackground = $('.modal-background');
+
+	let $modalBackground = $('.modal-background');
+	let $modalHackyouContainer = $('.modal-hackerYou__container');
 
 	//Prompt div to open
 	$('.hello-hackerYou__btn').on('click', function(e){
 		console.log('fired open');
 		e.preventDefault();
-		modalBackground.addClass('show');
-		$('.modal-hackerYou__container').animate('slow');
+		$modalBackground.addClass('show');
+		$modalHackyouContainer.animate('slow');
 	});
 
 	//Prompt div to close
 	$('.modal-hackerYou__close').on('click', function(){
 		console.log('fired closed');
-		modalBackground.removeClass('show');
+		$modalBackground.removeClass('show');
 	});
 
 	//form validate
@@ -39,7 +36,7 @@ $(function () {
                 	phone: "Please provide a phone number"
                 },
                  submitHandler: function() {
-			        $('.modal-hackerYou__container').hide('slow');
+			        $modalHackyouContainer.hide('slow');
 			    }
 			    
        });	 
@@ -49,26 +46,26 @@ $(function () {
 		e.preventDefault();
 
 		//Get input value
-		fNameDtls = $('input[name=fName]').val();
-		lNameDtls = $('input[name=lName]').val();
-		emailDtls = $('input[name=email]').val();
-		phoneInputDtls = $('input[type=number]').val();
+		let $fNameDtls = $('input[name=fName]').val();
+		let $lNameDtls = $('input[name=lName]').val();
+		let $emailDtls = $('input[name=email]').val();
+		let $phoneInputDtls = $('input[type=number]').val();
 
 		//Output results
 	    if($(this).valid()) {
 	    	let successTitle = '<h2 class="modal-hackerYou__success--sub-title align-center">Thanks for the details!!!</h2>';
+	    	let $modalSuccess = $('.modal-hackerYou__success');
 	        let str = '';
-	        str += fNameDtls + '<br />';
-	        str += lNameDtls + '<br />';
-	        str += emailDtls + '<br />';
-	        str += phoneInputDtls + '<br />';
-	        $('.modal-hackerYou__success').append(successTitle , str);
+	        str += $fNameDtls + '<br />';
+	        str += $lNameDtls + '<br />';
+	        str += $emailDtls + '<br />';
+	        str += $phoneInputDtls + '<br />';
+	        $modalSuccess.append(successTitle , str);
 	    }
 
 	    return false;
 	});
 
-	$('#form').data('validator').resetForm();
 
 });
 
